@@ -20,7 +20,7 @@ public class Main {
        Cliente cliente = new Cliente(1,"Jose","ruas das fadas", "36983943");
         System.out.println(cliente);
         
-       Usuario usuario = new Usuario("123", "Administrador", 1, "josefs");
+       Usuario usuario = new Usuario(1, "josefs", "123");
         System.out.println(usuario);
         
        Servico servico = new Servico(23,"corte de cabelo", 15f);

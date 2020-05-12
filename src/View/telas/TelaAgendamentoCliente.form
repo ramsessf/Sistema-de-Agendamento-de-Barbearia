@@ -43,12 +43,15 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField1">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="120" y="50" width="80" height="30"/>
+          <AbsoluteConstraints x="120" y="50" width="60" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -153,7 +156,7 @@
     <Component class="javax.swing.JTextField" name="jTextField5">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="120" y="290" width="150" height="30"/>
+          <AbsoluteConstraints x="120" y="290" width="220" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -179,7 +182,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="10" y="440" width="1050" height="150"/>
+          <AbsoluteConstraints x="0" y="440" width="1080" height="150"/>
         </Constraint>
       </Constraints>
 
@@ -188,11 +191,13 @@
         <Component class="javax.swing.JTable" name="jTable1">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="4">
+              <Table columnCount="6" rowCount="5">
                 <Column editable="true" title="ID" type="java.lang.Object"/>
                 <Column editable="true" title="Nome" type="java.lang.Object"/>
                 <Column editable="true" title="Servico" type="java.lang.Object"/>
+                <Column editable="true" title="Valor" type="java.lang.Object"/>
                 <Column editable="true" title="Data Agendamento" type="java.lang.Object"/>
+                <Column editable="true" title="Observacao" type="java.lang.Object"/>
               </Table>
             </Property>
           </Properties>

@@ -24,7 +24,7 @@ public class Agendamento {
     private Date data;
     private String observacao;
 
-    public static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    public static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:MM");
 
     public Agendamento() {
     }

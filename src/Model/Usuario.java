@@ -17,16 +17,19 @@ public class Usuario extends Pessoa {
     private String perfilAcesso;
 
 
-    public Usuario(String senha, String perfilAcesso, int id, String nome, char sexo, String dataNascimento, String telefone, String email, String RG) {
+    public Usuario(int id, String nome, char sexo, String dataNascimento, String telefone, String email, String RG, String senha, String perfilAcesso) {
         super(id, nome, sexo, dataNascimento, telefone, email, RG);
         this.senha = senha;
         this.perfilAcesso = perfilAcesso;
     }
 
-    public Usuario(String senha, String perfilAcesso, int id, String nome) {
+    public Usuario(int id, String nome,String senha) {
         super(id, nome);
         this.senha = senha;
-        this.perfilAcesso = perfilAcesso;
+    }
+    
+    public String getSenha(){
+        return senha;
     }
  
     public void setSenha(String senha){
