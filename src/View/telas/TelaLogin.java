@@ -6,6 +6,7 @@
 package View.telas;
 
 import Controller.LoginController;
+import Model.DAO.Banco;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -24,6 +25,7 @@ public class TelaLogin extends javax.swing.JFrame {
     public TelaLogin() {
         initComponents();
         controller =  new LoginController(this);
+        Banco.inicia();
     }
 
     /**
@@ -39,7 +41,7 @@ public class TelaLogin extends javax.swing.JFrame {
         lblSenha = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         txtSenha = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        btnEntrarNoSistema = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -64,15 +66,16 @@ public class TelaLogin extends javax.swing.JFrame {
         getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 220, 30));
         getContentPane().add(txtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, 220, 30));
 
-        jButton1.setBackground(new java.awt.Color(0, 255, 0));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1.setText("Entrar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnEntrarNoSistema.setBackground(new java.awt.Color(0, 255, 0));
+        btnEntrarNoSistema.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnEntrarNoSistema.setText("Entrar");
+        btnEntrarNoSistema.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEntrarNoSistema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnEntrarNoSistemaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 460, 220, 30));
+        getContentPane().add(btnEntrarNoSistema, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 460, 220, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/painel-login.png"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -89,9 +92,9 @@ public class TelaLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnEntrarNoSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarNoSistemaActionPerformed
      this.controller.entrarNoSistema();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnEntrarNoSistemaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,7 +132,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnEntrarNoSistema;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblSenha;

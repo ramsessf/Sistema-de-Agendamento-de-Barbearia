@@ -5,17 +5,22 @@
  */
 package View.telas;
 
+import Controller.MenuPrincipalController;
+
 /**
  *
  * @author virtual box
  */
 public class TelaMenuPrincipal extends javax.swing.JFrame {
 
+    private final MenuPrincipalController controller;
+
     /**
      * Creates new form MenuPrincipal
      */
     public TelaMenuPrincipal() {
         initComponents();
+        controller = new MenuPrincipalController(this);
     }
 
     /**
@@ -28,21 +33,37 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuCad = new javax.swing.JMenu();
         menuCadCli = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         menuAgenda = new javax.swing.JMenu();
-        menuAgenServ = new javax.swing.JMenuItem();
+        menuAgendaCli = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sistema de Agendamento de Barbearia");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/barbearia_fundo_menu.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 350));
+
+        jLabel2.setText("USUÁRIO");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 40, 100, 30));
+
+        jLabel3.setText("DATA");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 130, 90, 20));
+
+        jMenuBar1.setBackground(new java.awt.Color(51, 255, 102));
+        jMenuBar1.setForeground(new java.awt.Color(0, 0, 204));
+        jMenuBar1.setToolTipText("");
 
         menuCad.setText("Cadastro");
+        menuCad.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         menuCadCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/icones/cliente-icon.png"))); // NOI18N
         menuCadCli.setText("Clientes");
@@ -64,17 +85,27 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(menuCad);
 
         menuAgenda.setText("Agendamento");
+        menuAgenda.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
-        menuAgenServ.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/icones/agenda-icon.png"))); // NOI18N
-        menuAgenServ.setText("Cliente");
-        menuAgenServ.addActionListener(new java.awt.event.ActionListener() {
+        menuAgendaCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/icones/agenda-icon.png"))); // NOI18N
+        menuAgendaCli.setText("Cliente");
+        menuAgendaCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuAgenServActionPerformed(evt);
+                menuAgendaCliActionPerformed(evt);
             }
         });
-        menuAgenda.add(menuAgenServ);
+        menuAgenda.add(menuAgendaCli);
 
         jMenuBar1.add(menuAgenda);
+
+        jMenu1.setText("Relatórios");
+        jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/icones/relatorioTrabalho-icon.png"))); // NOI18N
+        jMenuItem3.setText("Clientes");
+        jMenu1.add(jMenuItem3);
+
+        jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
 
@@ -85,9 +116,9 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_menuCadCliActionPerformed
 
-    private void menuAgenServActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAgenServActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_menuAgenServActionPerformed
+    private void menuAgendaCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAgendaCliActionPerformed
+        this.controller.EntrarNoMenuAgenda();
+    }//GEN-LAST:event_menuAgendaCliActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,11 +158,15 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem menuAgenServ;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenu menuAgenda;
+    private javax.swing.JMenuItem menuAgendaCli;
     private javax.swing.JMenu menuCad;
     private javax.swing.JMenuItem menuCadCli;
     // End of variables declaration//GEN-END:variables

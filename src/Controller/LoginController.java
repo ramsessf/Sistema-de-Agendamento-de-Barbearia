@@ -6,6 +6,7 @@
 package Controller;
 
 import Controller.helpers.LoginHelper;
+import Model.DAO.UsuarioDAO;
 import Model.Usuario;
 import View.telas.TelaLogin;
 import View.telas.TelaMenuPrincipal;
@@ -27,15 +28,18 @@ public class LoginController {
     }
     
     public void entrarNoSistema(){
-      Usuario modelo = helper.obtermodelo();
+      Usuario usuario = helper.obtermodelo();
       
-        TelaMenuPrincipal menuPrincipal = new TelaMenuPrincipal();
-      if(modelo.getNome().equals("barbeiro") && modelo.getSenha().equals("barbeiro")){
+      UsuarioDAO usuarioDAO = new UsuarioDAO();
+      Usuario usuarioAutenticado = usuarioDAO.selectPorNomeESenha(usuario);
+      
+      if(usuarioAutenticado != null){
+          this.view.dispose();
+          TelaMenuPrincipal menuPrincipal = new TelaMenuPrincipal();
           menuPrincipal.setVisible(true);
       }else{
-          JOptionPane.showMessageDialog(null, "Usuário e senha inválidos!");
+          view.exibeMensagem("Usuário e/ou senha inválidos!");
       }
-      
     }
     
     public void fizTarefa(){

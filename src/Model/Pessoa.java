@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  *
  * @author virtual box
  */
-public class Pessoa {
+public abstract class Pessoa {
 
     protected int id;
     protected String nome;
@@ -97,5 +97,6 @@ public class Pessoa {
     public void setRG(String RG) {
         this.RG = RG;
     }
+       
 
 }
