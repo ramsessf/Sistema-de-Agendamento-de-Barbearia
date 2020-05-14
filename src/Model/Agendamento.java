@@ -24,8 +24,6 @@ public class Agendamento {
     private Date data;
     private String observacao;
 
-    public static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:MM");
-
     public Agendamento() {
     }
 
@@ -35,7 +33,7 @@ public class Agendamento {
         this.servico = servico;
         this.valor = valor;
         try {
-            this.data = sdf.parse(data);
+            this.data = new SimpleDateFormat("dd/MM/yyyy").parse(data);
         } catch (ParseException ex) {
             java.util.logging.Logger.getLogger(Agendamento.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -77,6 +75,14 @@ public class Agendamento {
 
     public Date getData() {
         return data;
+    }
+    
+    public String getDataFormatada(){
+        return new SimpleDateFormat("dd/MM/yyyy").format(data);
+    }
+    
+    public String getHoraFormatada(){
+        return new SimpleDateFormat("hh:MM").format(data);
     }
 
     public void setData(Date data) {
