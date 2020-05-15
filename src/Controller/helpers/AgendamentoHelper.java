@@ -12,6 +12,8 @@ import View.telas.TelaAgendamentoCliente;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
 
@@ -48,9 +50,28 @@ public class AgendamentoHelper {
             
         }
         
+     }
+    
+    public void setarRegistosNoComboCliente(ArrayList<Cliente> clientes){
+       DefaultComboBoxModel jcomboBoxCliente = (DefaultComboBoxModel)view.getCbCliente().getModel();
+       
+        for (Cliente cliente : clientes) {
+           jcomboBoxCliente.addElement(cliente);        
+        }         
+    }
+ 
+
+    public void setarRegistrosNoComboServico(ArrayList<Servico> servicos) {
+       DefaultComboBoxModel jcomboBoxServico = (DefaultComboBoxModel) view.getCbServico().getModel();
+       
+        for (Servico servico : servicos) {
+            jcomboBoxServico.addElement(servico);
             
+        }
     }
     
+       
     public void limparTela(){
+        
     }
 }

@@ -70,6 +70,7 @@ public class TelaAgendamentoCliente extends javax.swing.JFrame {
         lblIdCliente.setText("ID:");
         getContentPane().add(lblIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 30, 30));
 
+        txtIdCliente.setText("0");
         txtIdCliente.setEnabled(false);
         txtIdCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,7 +79,6 @@ public class TelaAgendamentoCliente extends javax.swing.JFrame {
         });
         getContentPane().add(txtIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 60, 30));
 
-        cbCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(cbCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 310, 30));
 
         lblCliente.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -86,7 +86,7 @@ public class TelaAgendamentoCliente extends javax.swing.JFrame {
         lblCliente.setText("Cliente:");
         getContentPane().add(lblCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
 
-        cbServico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Corte de Cabelo", "Barba", "Hidratação/Alisamento/selagem", " " }));
+        cbServico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
         getContentPane().add(cbServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 220, 30));
 
         lblServico.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -99,6 +99,7 @@ public class TelaAgendamentoCliente extends javax.swing.JFrame {
         lblValor.setText("Valor R$:");
         getContentPane().add(lblValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, 20));
 
+        txtValor.setText("0.0");
         txtValor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtValorActionPerformed(evt);
@@ -234,6 +235,8 @@ public class TelaAgendamentoCliente extends javax.swing.JFrame {
 
     private void iniciar() {
          this.controller.atualizarAgenda();
+         this.controller.atualizarComboCliente();
+         this.controller.atualizarComboServico();
     }
     
     public JComboBox<String> getCbCliente() {
