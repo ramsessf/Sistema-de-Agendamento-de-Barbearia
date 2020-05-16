@@ -9,6 +9,7 @@ import Controller.helpers.AgendamentoHelper;
 import Model.Agendamento;
 import Model.Cliente;
 import Model.DAO.AgendamentoDAO;
+import Model.DAO.Banco;
 import Model.DAO.ClienteDAO;
 import Model.DAO.ServicoDAO;
 import Model.Servico;
@@ -29,7 +30,7 @@ public class AgendamentoController {
         helper = new AgendamentoHelper(view);
     }
     
-    public void atualizarAgenda(){
+    public void atualizarTabelaAgenda(){
         //Busca lista de agendamento no banco
         AgendamentoDAO agendamentoDAO = new AgendamentoDAO();
         ArrayList<Agendamento> agendamentos = agendamentoDAO.selectAll(); 
@@ -62,6 +63,16 @@ public class AgendamentoController {
         
         this.helper.setarValorServico(servico.getValor());
         
+    }
+    
+    public void agendarCliente(){
+        //Buscar objeto agendamento da tela
+        Agendamento agendamento = this.helper.obterModelo();
+        //Salva objeto no Banco de dados
+       new AgendamentoDAO().insert(agendamento);
+       atualizarTabelaAgenda();
+       this.helper.limparTela();
+       view.exibeMensagem("Cliente agendado com sucesso!");
     }
     
      

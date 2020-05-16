@@ -237,7 +237,7 @@
     <Component class="javax.swing.JButton" name="btnAgendar">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="ff" red="33" type="rgb"/>
+          <Color blue="33" green="ff" red="33" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="14" style="1"/>
@@ -246,10 +246,22 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="AGENDAR"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder/>
+          </Border>
+        </Property>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor em Forma de M&#xe3;o"/>
+        </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgendarActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="560" y="310" width="450" height="30"/>
+          <AbsoluteConstraints x="560" y="310" width="450" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -270,7 +282,7 @@
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="7" rowCount="5">
                 <Column editable="true" title="ID" type="java.lang.Object"/>
-                <Column editable="true" title="Nome" type="java.lang.Object"/>
+                <Column editable="true" title="Cliente" type="java.lang.Object"/>
                 <Column editable="true" title="Servico" type="java.lang.Object"/>
                 <Column editable="true" title="Valor" type="java.lang.Object"/>
                 <Column editable="true" title="Data Agenda" type="java.lang.Object"/>

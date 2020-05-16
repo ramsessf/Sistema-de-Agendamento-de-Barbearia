@@ -8,6 +8,7 @@ package View.telas;
 import Controller.AgendamentoController;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
@@ -135,11 +136,19 @@ public class TelaAgendamentoCliente extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, 450, 150));
 
-        btnAgendar.setBackground(new java.awt.Color(51, 255, 0));
+        btnAgendar.setBackground(new java.awt.Color(51, 255, 51));
         btnAgendar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnAgendar.setForeground(new java.awt.Color(255, 255, 255));
         btnAgendar.setText("AGENDAR");
-        getContentPane().add(btnAgendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, 450, 30));
+        btnAgendar.setToolTipText("");
+        btnAgendar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAgendar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAgendar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgendarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAgendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, 450, 40));
 
         tableAgendaClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -150,7 +159,7 @@ public class TelaAgendamentoCliente extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nome", "Servico", "Valor", "Data Agenda", "Hora Agenda", "Observacao"
+                "ID", "Cliente", "Servico", "Valor", "Data Agenda", "Hora Agenda", "Observacao"
             }
         ));
         jScrollPane1.setViewportView(tableAgendaClientes);
@@ -182,6 +191,10 @@ public class TelaAgendamentoCliente extends javax.swing.JFrame {
     private void cbServicoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbServicoItemStateChanged
         this.controller.obterValorServico();
     }//GEN-LAST:event_cbServicoItemStateChanged
+
+    private void btnAgendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendarActionPerformed
+        this.controller.agendarCliente();
+    }//GEN-LAST:event_btnAgendarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -243,10 +256,15 @@ public class TelaAgendamentoCliente extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void iniciar() {
-         this.controller.atualizarAgenda();
+         this.controller.atualizarTabelaAgenda();
          this.controller.atualizarComboCliente();
          this.controller.atualizarComboServico();
     }
+      
+    public void exibeMensagem(String mensagem) {
+        JOptionPane.showMessageDialog(null, mensagem );
+        
+         }
     
     public JComboBox<String> getCbCliente() {
         return cbCliente;

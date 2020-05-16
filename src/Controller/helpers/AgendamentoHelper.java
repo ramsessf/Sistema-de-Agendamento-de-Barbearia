@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author virtual box
  */
-public class AgendamentoHelper {
+public class AgendamentoHelper implements IHelper {
 
    private final TelaAgendamentoCliente view;
    private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:MM");
@@ -69,11 +69,6 @@ public class AgendamentoHelper {
             
         }
     }
-    
-       
-    public void limparTela(){
-        
-    }
 
     public Servico obterServico() {
         return (Servico) view.getCbServico().getSelectedItem();
@@ -82,4 +77,30 @@ public class AgendamentoHelper {
     public void setarValorServico(float valor) {
          view.getTxtValor().setText(valor + "");
        }
+    
+    @Override
+    public Agendamento obterModelo() {
+        int id =  Integer.parseInt(view.getTxtIdCliente().getText());
+        Cliente cliente = (Cliente) view.getCbCliente().getSelectedItem();
+        Servico servico = (Servico) view.getCbServico().getSelectedItem();
+        float valor = Float.parseFloat(view.getTxtValor().getText());
+        String data = view.getTxtData().getText();
+        String hora = view.getTxtHora().getText();
+        String observacao = view.getTxtAobs().getText();
+        
+        Agendamento agendamento = new Agendamento(id, cliente, servico, valor, data, hora, observacao);
+        return agendamento;
+              
+    }
+     
+    @Override   
+    public void limparTela(){
+        view.getCbCliente().setSelectedItem("");
+        view.getCbServico().setSelectedItem("");
+        view.getTxtValor().setText("");
+        view.getTxtData().setText("");
+        view.getTxtHora().setText("");
+        view.getTxtAobs().setText("");
+        
+    }
 }

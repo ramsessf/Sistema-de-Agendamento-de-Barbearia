@@ -22,12 +22,13 @@ public class Agendamento {
     private Servico servico;
     private float valor;
     private Date data;
+    private Date hora;
     private String observacao;
 
     public Agendamento() {
     }
 
-    public Agendamento(int id, Cliente cliente, Servico servico, float valor, String data, String observacao) {
+    public Agendamento(int id, Cliente cliente, Servico servico, float valor, String data, String hora, String observacao) {
         this.id = id;
         this.cliente = cliente;
         this.servico = servico;
@@ -37,7 +38,14 @@ public class Agendamento {
         } catch (ParseException ex) {
             java.util.logging.Logger.getLogger(Agendamento.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
+        try {
+            this.hora = new SimpleDateFormat("HH:mm").parse(hora);
+                    
+                    } catch (ParseException ex) {
+            java.util.logging.Logger.getLogger(Agendamento.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      
         this.observacao = observacao;
     }
 
@@ -82,7 +90,7 @@ public class Agendamento {
     }
     
     public String getHoraFormatada(){
-        return new SimpleDateFormat("hh:MM").format(data);
+        return new SimpleDateFormat("HH:mm").format(hora);
     }
 
     public void setData(Date data) {

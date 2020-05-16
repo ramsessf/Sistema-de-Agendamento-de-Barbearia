@@ -12,7 +12,7 @@ import View.telas.TelaLogin;
  *
  * @author virtual box
  */
-public class LoginHelper {
+public class LoginHelper implements IHelper {
 
     private final TelaLogin view;
     
@@ -39,9 +39,15 @@ public class LoginHelper {
         
     }
     
+    @Override
     public void limparTela(){
         view.getTxtUsuario().setText("");
         view.getTxtSenha().setText("");
+    }
+
+    @Override
+    public Object obterModelo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

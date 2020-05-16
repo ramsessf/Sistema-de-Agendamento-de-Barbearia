@@ -16,7 +16,7 @@ public class Main {
     
     public static void main(String[] args) throws ParseException{
                
-       SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:MM:ss");
+       SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
        Cliente cliente = new Cliente(1,"Jose","ruas das fadas", "36983943");
         System.out.println(cliente);
         
@@ -26,7 +26,7 @@ public class Main {
        Servico servico = new Servico(23,"corte de cabelo", 15f);
         System.out.println(servico);
         
-       Agendamento agendamento = new Agendamento(1, cliente, servico, 30, "23/09/2019 09:15", "sem obs");
+       Agendamento agendamento = new Agendamento(1, cliente, servico, 30, "23/09/2019", "09:15", "sem obs");
         System.out.println(agendamento.getCliente().getNome());
         
        
