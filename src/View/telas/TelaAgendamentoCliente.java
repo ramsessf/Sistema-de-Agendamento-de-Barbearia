@@ -87,6 +87,11 @@ public class TelaAgendamentoCliente extends javax.swing.JFrame {
         getContentPane().add(lblCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
 
         cbServico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        cbServico.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbServicoItemStateChanged(evt);
+            }
+        });
         getContentPane().add(cbServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 220, 30));
 
         lblServico.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -173,6 +178,10 @@ public class TelaAgendamentoCliente extends javax.swing.JFrame {
     private void txtValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtValorActionPerformed
+
+    private void cbServicoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbServicoItemStateChanged
+        this.controller.obterValorServico();
+    }//GEN-LAST:event_cbServicoItemStateChanged
 
     /**
      * @param args the command line arguments

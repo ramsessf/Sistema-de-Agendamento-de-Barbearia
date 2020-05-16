@@ -56,5 +56,13 @@ public class AgendamentoController {
         //Exibe a lista no combobox servico
         this.helper.setarRegistrosNoComboServico(servicos);
     }
+    
+    public void obterValorServico(){
+        Servico servico = this.helper.obterServico();
+        
+        this.helper.setarValorServico(servico.getValor());
+        
+    }
+    
      
 }

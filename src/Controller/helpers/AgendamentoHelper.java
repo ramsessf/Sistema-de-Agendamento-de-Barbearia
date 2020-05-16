@@ -74,4 +74,12 @@ public class AgendamentoHelper {
     public void limparTela(){
         
     }
+
+    public Servico obterServico() {
+        return (Servico) view.getCbServico().getSelectedItem();
+       }
+    
+    public void setarValorServico(float valor) {
+         view.getTxtValor().setText(valor + "");
+       }
 }
